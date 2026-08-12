@@ -25,4 +25,8 @@
 			"remote": true,
 		},
 	],
+	"queues": {
+		"consumers": [],
+		"producers": [],
+	},
 }
