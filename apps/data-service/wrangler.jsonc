@@ -26,7 +26,16 @@
 		},
 	],
 	"queues": {
-		"consumers": [],
-		"producers": [],
+		"consumers": [
+			{
+				"queue": "smart-links-data-queue-stage",
+			},
+		],
+		"producers": [
+			{
+				"binding": "QUEUE",
+				"queue": "smart-links-data-queue-stage",
+			},
+		],
 	},
 }
