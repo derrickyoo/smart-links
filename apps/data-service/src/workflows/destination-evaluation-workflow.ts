@@ -1,4 +1,5 @@
 import { collectDestinationInfo } from '@/helpers/browser-run';
+import { addEvaluation } from '@repo/data-ops/queries/evaluations';
 import { WorkflowEntrypoint, WorkflowEvent, WorkflowStep } from 'cloudflare:workers';
 import { aiDestinationChecker } from '../helpers/ai-destination-checker';
 
@@ -21,7 +22,18 @@ export class DestinationEvaluationWorkflow extends WorkflowEntrypoint<Env, Desti
 			},
 		);
 
+		const evaluationId = await step.do('Save evaluation in database', async () => {
+			return await addEvaluation({
+				linkId: event.payload.linkId,
+				status: aiStatus.status,
+				reason: aiStatus.statusReason,
+				accountId: event.payload.accountId,
+				destinationUrl: event.payload.destinationUrl,
+			});
+		});
+
 		console.log('collectedData: ', collectedData);
 		console.log('aiStatus:', aiStatus);
+		console.log('aiStatus:', evaluationId);
 	}
 }
