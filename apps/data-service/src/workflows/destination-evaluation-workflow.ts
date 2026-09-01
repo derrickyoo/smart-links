@@ -1,10 +1,13 @@
 import { collectDestinationInfo } from '@/helpers/browser-run';
+import { initDatabase } from '@repo/data-ops/database';
 import { addEvaluation } from '@repo/data-ops/queries/evaluations';
 import { WorkflowEntrypoint, WorkflowEvent, WorkflowStep } from 'cloudflare:workers';
 import { aiDestinationChecker } from '../helpers/ai-destination-checker';
 
 export class DestinationEvaluationWorkflow extends WorkflowEntrypoint<Env, DestinationStatusEvaluationParams> {
 	async run(event: Readonly<WorkflowEvent<DestinationStatusEvaluationParams>>, step: WorkflowStep) {
+		initDatabase(this.env.DB);
+
 		const collectedData = await step.do('Collect rendered destination page data', async () => {
 			return collectDestinationInfo(this.env, event.payload.destinationUrl);
 		});
