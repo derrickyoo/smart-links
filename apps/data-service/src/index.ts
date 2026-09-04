@@ -1,7 +1,7 @@
 import { initDatabase } from '@repo/data-ops/database';
 import { QueueMessageSchema } from '@repo/data-ops/zod-schema/queue';
 import { WorkerEntrypoint } from 'cloudflare:workers';
-import app from './hono/app';
+import { app } from './hono/app';
 import { handleLinkClick } from './queue-handlers/link-clicks';
 export { EvaluationSchedulerObject } from '@/durable-objects/evaluation-scheduler';
 export { LinkClickTrackerObject } from '@/durable-objects/link-click-tracker';
