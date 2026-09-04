@@ -8,7 +8,7 @@ interface ClickData {
 	destinationCountryCode: string;
 }
 
-export class EvaluationScheduler extends DurableObject {
+export class EvaluationSchedulerObject extends DurableObject {
 	clickData: ClickData | undefined;
 
 	constructor(ctx: DurableObjectState, env: Env) {

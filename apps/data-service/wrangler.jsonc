@@ -65,15 +65,23 @@
 	"durable_objects": {
 		"bindings": [
 			{
-				"name": "EVALUATION_SCHEDULER",
-				"class_name": "EvaluationScheduler",
+				"name": "EVALUATION_SCHEDULER_OBJECT",
+				"class_name": "EvaluationSchedulerObject",
+			},
+			{
+				"name": "LINK_CLICK_TRACKER_OBJECT",
+				"class_name": "LinkClickTrackerObject",
 			},
 		],
 	},
 	"migrations": [
 		{
 			"tag": "v1",
-			"new_classes": ["EvaluationScheduler"],
+			"new_classes": ["EvaluationSchedulerObject"],
+		},
+		{
+			"tag": "V2",
+			"new_classes": ["LinkClickTrackerObject"],
 		},
 	],
 }
