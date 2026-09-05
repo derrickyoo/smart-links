@@ -77,7 +77,7 @@
 	"migrations": [
 		{
 			"tag": "v1",
-			"new_classes": ["EvaluationSchedulerObject"],
+			"new_sqlite_classes": ["EvaluationSchedulerObject"],
 		},
 		{
 			"tag": "V2",
