@@ -92,14 +92,12 @@
 				{
 					"binding": "DB",
 					"database_id": "bed0e222-2445-4ec5-85ed-09ac62e5f82f",
-					"remote": true,
 				},
 			],
 			"kv_namespaces": [
 				{
 					"binding": "CACHE",
 					"id": "6620cdc3ed254d9d87b412734d77917c",
-					"remote": true,
 				},
 			],
 			"queues": {

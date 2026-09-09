@@ -31,5 +31,19 @@
         },
       ],
     },
+    "production": {
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_id": "bed0e222-2445-4ec5-85ed-09ac62e5f82f",
+        },
+      ],
+      "services": [
+        {
+          "binding": "BACKEND_SERVICE",
+          "service": "data-service-production",
+        },
+      ],
+    },
   },
 }
