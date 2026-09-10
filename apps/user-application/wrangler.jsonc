@@ -30,6 +30,23 @@
           "remote": true,
         },
       ],
+      "migrations": [
+        {
+          "tag": "v1",
+          "new_sqlite_classes": ["EvaluationSchedulerObject"],
+        },
+        {
+          "tag": "V2",
+          "new_sqlite_classes": ["LinkClickTrackerObject"],
+        },
+        {
+          "tag": "V3",
+          "deleted_classes": [
+            "EvaluationSchedulerObject",
+            "LinkClickTrackerObject",
+          ],
+        },
+      ],
     },
     "production": {
       "d1_databases": [
